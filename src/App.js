@@ -12,27 +12,21 @@ const samsClubList = []
 const [items, setItems] = useState([])
 
 useEffect(() => {
-  console.log('effect')
-
   //fetch data will not work if stored into a variable
   groceryService.getAll().then(response => {
-    console.log('data fetched')
-    console.log(response)
     setItems(response)
   })
   
 
 },[])
 
-console.log('test' ,items)
 
 
   return (
     <div className="App h-screen">
-      <StoreList title='Gualmart' items={items?items.map(item => item.store === 'walmart'): null }/>
-      <StoreList title='Food King'/>
-      <StoreList title='Sams Club'/>
-      <ListItem></ListItem>
+      <StoreList title='Gualmart' items={items?.filter(item => item.store === 'walmart')}/>
+      <StoreList title='Food King' items={items?.filter(item => item.store === 'foodking')}/>
+      <StoreList title='Sams Club' items={items?.filter(item => item.store === 'sams')}/>
     </div>
   );
 }
