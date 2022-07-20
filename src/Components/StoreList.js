@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import groceryService from '../Services/groceryService'
 import ListItem from './ListItem'
 
 const StoreList = ({title,items}) =>{
@@ -32,6 +33,10 @@ const StoreList = ({title,items}) =>{
 			"store:": title.replace(/\s+/g, '').toLowerCase()
 		}
 
+		groceryService.create(listItem).then(response =>{
+			console.log(response)
+		})
+
 		setListItems([...listItems,listItem])
 		setMax(max+1)
 		setInput('')
@@ -42,6 +47,10 @@ const StoreList = ({title,items}) =>{
 
 		let filteredList = items.filter(item => item.id !== id)
 		setListItems(filteredList)
+
+		groceryService.remove(id).then(response => {
+			console.log(response)
+		})
 
 		if(filteredList.length === 0){
 			setMax(0)
