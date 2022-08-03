@@ -24,7 +24,7 @@ useEffect(() => {
 
   return (
     <div className="App h-screen">
-      <StoreList title='Gualmart' items={items?.filter(item => item.store === 'walmart')}/>
+      <StoreList title='Gualmart' items={items?.filter(item => item.store === 'gualmart')}/>
       <StoreList title='Food King' items={items?.filter(item => item.store === 'foodking')}/>
       <StoreList title='Sams Club' items={items?.filter(item => item.store === 'samsclub')}/>
     </div>

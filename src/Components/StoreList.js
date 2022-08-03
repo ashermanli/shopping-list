@@ -1,3 +1,4 @@
+import { list } from 'postcss'
 import React, {useEffect, useState} from 'react'
 import groceryService from '../Services/groceryService'
 import ListItem from './ListItem'
@@ -5,7 +6,6 @@ import ListItem from './ListItem'
 const StoreList = ({title,items}) =>{
 
 	const [input,setInput] = useState([])
-	const [max, setMax] = useState(0)
 	const [listItems, setListItems] = useState([])
 
 
@@ -28,32 +28,31 @@ const StoreList = ({title,items}) =>{
 		}
 
 		let listItem = {
-			"id":max+1,
 			"content": input, 
-			"store:": title.replace(/\s+/g, '').toLowerCase()
+			"store": title.replace(/\s+/g, '').toLowerCase()
 		}
 
 		groceryService.create(listItem).then(response =>{
-			console.log(response)
+			listItem.id = response.id
+			setListItems([...listItems,listItem])
 		})
-
-		setListItems([...listItems,listItem])
-		setMax(max+1)
+		
 		setInput('')
 
 	}
 
 	const deleteItem = (id) =>{
 
-		let filteredList = items.filter(item => item.id !== id)
-		setListItems(filteredList)
-
 		groceryService.remove(id).then(response => {
 			console.log(response)
 		})
 
+		let filteredList = listItems.filter(item => item.id !== id)
+		
+		setListItems(filteredList)
+		// console.log(filteredList)
+
 		if(filteredList.length === 0){
-			setMax(0)
 			setInput('set your items')
 		}
 	}
