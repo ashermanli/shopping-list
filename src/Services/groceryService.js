@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const baseURL = 'http://localhost:3001/api/items'
+// const baseURL = 'http://localhost:3001/api/items'
+const baseURL = 'https://dashboard.heroku.com/apps/thawing-fjord-47516'
 
 const getAll = () =>{
 	const request = axios.get(baseURL)
