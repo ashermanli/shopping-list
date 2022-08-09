@@ -16,7 +16,7 @@ const StoreList = ({title,items}) =>{
 
 
 	const handleInput = (e) =>{
-		console.log(e.target.value)
+		//console.log(e.target.value)
 		setInput(e.target.value)
 	}
 
