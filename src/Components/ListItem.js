@@ -3,8 +3,8 @@ import React, {useState} from 'react'
 const ListItem = ({item, id, deleteItem}) => {
 
 	return (
-		<div>
-		<li className='border-2 border-solid mx-2 flex justify-between px-5' key={id}>{item} <button className='border-2 border-solid w-auto h-5' onClick={() => deleteItem(id)}>delete</button></li>
+		<div className='my-2'>
+		<li className='border-2 border-solid border-blue-500 rounded mx-2 px-1 flex justify-between items-center h-10' key={id}>{item}<div><button className='border-2 border-solid border-blue-500 rounded'> Acquired</button> <button className='border-2 border-solid border-red-500 rounded' onClick={() => deleteItem(id)}>delete</button></div></li>
 		</div>
 	)
 }
