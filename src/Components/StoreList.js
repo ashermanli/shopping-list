@@ -64,9 +64,9 @@ const StoreList = ({title,items}) =>{
 		<ul>
 			{listItems?.map(item => <ListItem key={item.id} item={item.content} id={item.id} deleteItem={()=>deleteItem(item.id)}/>)}
 		</ul>
-		<div className='justify-self-start'>
-			<input className='border-2 rounded border-solid h-5 w-auto mx-5' type='text' value={input} onChange={handleInput}></input>
-			<button className='h-5 w-16 self-center' onClick={addItem}>Add</button>
+		<div className='flex justify-center align-middle mb-2'>
+			<input className='border-2 rounded border-solid border-blue-500 h-5 w-auto mx-5' type='text' value={input} onChange={handleInput}></input>
+			<button className='flex border-2 rounded border-solid border-blue-500 h-5 w-16 items-center justify-center' onClick={addItem}><span>Add</span></button>
 		</div>
 	  </div>
     </div>
