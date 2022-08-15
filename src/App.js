@@ -23,10 +23,10 @@ useEffect(() => {
 
 
   return (
-    <div className="App h-screen font-Josefin">
-      <StoreList title='Gualmart' items={items?.filter(item => item.store === 'gualmart')}/>
-      <StoreList title='Food King' items={items?.filter(item => item.store === 'foodking')}/>
-      <StoreList title='Sams Club' items={items?.filter(item => item.store === 'samsclub')}/>
+    <div className="App h-screen">
+      <StoreList className='bg-inherit'title='Gualmart' items={items?.filter(item => item.store === 'gualmart')}/>
+      <StoreList className='h-full'title='Food King' items={items?.filter(item => item.store === 'foodking')}/>
+      <StoreList className='h-full'title='Sams Club' items={items?.filter(item => item.store === 'samsclub')}/>
     </div>
   );
 }

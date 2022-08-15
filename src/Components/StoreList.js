@@ -60,7 +60,7 @@ const StoreList = ({title,items}) =>{
 	return(
 	<div className='h-3/4 mb-20'>
       <h1 className="text-blue-800 text-5xl">{title}</h1>
-      <div className="border-2 rounded border-solid border-blue-500 h-full flex flex-col justify-end align-center m-2">
+      <div className="border-2 rounded-lg border-solid border-blue-500 h-full flex flex-col justify-end align-center m-2">
 		<ul>
 			{listItems?.map(item => <ListItem key={item.id} item={item.content} id={item.id} deleteItem={()=>deleteItem(item.id)}/>)}
 		</ul>
