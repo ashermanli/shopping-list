@@ -23,7 +23,7 @@ useEffect(() => {
 
 
   return (
-    <div className="App h-screen">
+    <div className="App h-max py-1">
       <StoreList className='bg-inherit'title='Gualmart' items={items?.filter(item => item.store === 'gualmart')}/>
       <StoreList className='h-full'title='Food King' items={items?.filter(item => item.store === 'foodking')}/>
       <StoreList className='h-full'title='Sams Club' items={items?.filter(item => item.store === 'samsclub')}/>
